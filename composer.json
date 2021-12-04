@@ -1,0 +1,19 @@
+{
+    "name": "clvr7/api-helper",
+    "description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Clvr7\\ApiHelper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Charlie Laver",
+            "email": "charlielaver7@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
