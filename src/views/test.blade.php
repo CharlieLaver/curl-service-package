@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>test</h1>
+    <form action="{{route('test')}}" method="post">
+        @csrf
+        <input type="text" name="endpoint" placeholder="API Endpoint">
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
