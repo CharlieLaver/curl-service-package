@@ -1,11 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
+use Clvr7\ApiHelper\Http\Controllers\RESTController;
 
-Route::get('test', function() {
-    return view('api-helper::test');
-}) -> name('test');
-
-Route::post('test', function(Request $request) {
-    return $request -> all();
-});
+Route::get('/rest-test', [RESTController::class, 'test']);

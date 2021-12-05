@@ -6,4 +6,8 @@ use App\Http\Controllers\Controller;
 
 class RESTController extends Controller {
 
+    public function test() {
+        die("here");
+    }
+
 }
