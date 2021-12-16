@@ -1,19 +1,26 @@
 {
-    "name": "clvr7/api-client",
-    "description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Clvr7\\ApiClient\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Charlie Laver",
-            "email": "charlielaver7@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+	"name": "clvr7/api-client",
+	"description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Charlie Laver",
+			"email": "charlielaver7@gmail.com"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Clvr7\\ApiClient\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Clvr7\\ApiClient\\ApiClientServiceProvider"
+			]
+		}
+	},
+	"minimum-stability": "dev"
 }
