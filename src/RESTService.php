@@ -4,8 +4,17 @@ namespace Clvr7\ApiClient;
 
 class RESTService {
 
-    public static function test() {
-        return "hello world";
+    private $endpoint = false;
+    private $APIKey = false;
+
+    function __construct($endpoint, $APIKey = false) {
+        $this -> $endpoint = $endpoint;
+        $this -> $APIKey = $APIKey;
     }
 
+    public function post() {
+        ## Send post request using curl or guzzle ?
+        dd($this -> endpoint);
+    }
+ 
 }
