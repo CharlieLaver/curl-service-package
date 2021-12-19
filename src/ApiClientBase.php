@@ -9,7 +9,7 @@ class ApiClientBase {
         if($success) {
             return Array(
                 "success" => true,
-                "data" => json_decode($data),
+                "data" => json_decode($data, true),
             );
         } else {
             return Array(

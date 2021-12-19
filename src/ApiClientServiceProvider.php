@@ -7,8 +7,8 @@ use Illuminate\Support\ServiceProvider;
 class ApiClientServiceProvider extends ServiceProvider {
 
     public function register() {
-        $this->app->singleton( RESTService::class, function() {
-            return new RESTService();
+        $this->app->singleton( REST::class, function() {
+            return new REST();
         });
     }
     

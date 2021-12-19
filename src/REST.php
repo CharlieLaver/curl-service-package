@@ -2,7 +2,7 @@
 
 namespace Clvr7\ApiClient;
 
-class RESTService extends ApiClientBase {
+class REST extends ApiClientBase {
 
     public static function get($endpoint) {
         $ch = curl_init();
