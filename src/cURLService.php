@@ -13,6 +13,10 @@ class cURLService extends cURLServiceBase {
         $this -> init($endpoint, $APIKey);
     }
 
+    public function addHeaders($headers) {
+        curl_setopt($this -> ch, CURLOPT_HTTPHEADER, $headers);
+    }
+
     public function get() {
 		$this -> curlOpts("GET");
         $response = curl_exec($this -> ch);
