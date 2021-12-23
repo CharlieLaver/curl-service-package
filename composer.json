@@ -1,5 +1,5 @@
 {
-	"name": "clvr7/api-client",
+	"name": "clvr7/curl-service",
 	"description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
 	"type": "library",
 	"license": "MIT",
@@ -12,13 +12,13 @@
 	"require": {},
 	"autoload": {
 		"psr-4": {
-			"Clvr7\\ApiClient\\": "src/"
+			"Clvr7\\cURLService\\": "src/"
 		}
 	},
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Clvr7\\ApiClient\\ApiClientServiceProvider"
+				"Clvr7\\cURLService\\cURLServiceProvider"
 			]
 		}
 	},
