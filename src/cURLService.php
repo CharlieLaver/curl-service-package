@@ -2,6 +2,11 @@
 
 namespace Clvr7\cURLService;
 
+## TODO
+    # Changing / adding url params to endpoint in diff methods
+    # adding headers
+    # SOAP req opt
+
 class cURLService extends cURLServiceBase {
 
 	public function __construct($endpoint, $APIKey = false) {
