@@ -1,52 +1,52 @@
 <?php
 
+
 namespace Clvr7\cURLService;
 
-## TODO
-    # SOAP REQ - https://stackoverflow.com/questions/7120586/soap-request-in-php-with-curl
+class cURLService {
 
-class cURLService extends cURLServiceBase {
+    protected $endpoint = false;
+    protected $ch = false;
 
-	public function __construct($endpoint, $APIKey = false) {
-        $this -> init($endpoint, $APIKey);
+    protected function init($endpoint) {
+        $this -> endpoint = $endpoint;
+        $this -> ch = curl_init();
     }
 
-    public function addHeaders($headers) {
-        curl_setopt($this -> ch, CURLOPT_HTTPHEADER, $headers);
-    }
-
-    public function get() {
-		$this -> curlOpts("GET");
-        $response = curl_exec($this -> ch);
-        if($e = curl_error($this -> ch)) {
-            return $this -> formatReturnData($e, false);
-        } else {
-            return $this -> formatReturnData($response, true);
+    protected function curlOpts($reqType, $data = false) {
+        curl_reset($this -> ch);
+        switch($reqType) {
+            case "GET":
+                curl_setopt($this -> ch, CURLOPT_URL, $this -> endpoint);
+                curl_setopt($this -> ch, CURLOPT_RETURNTRANSFER, true);
+                break;
+            case "POST":
+                curl_setopt($this -> ch, CURLOPT_URL, $this -> endpoint);
+                curl_setopt($this -> ch, CURLOPT_POST, true);
+                curl_setopt($this -> ch, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($this -> ch, CURLOPT_RETURNTRANSFER, true);
+                break;
+            case "PUT":
+                curl_setopt($this -> ch, CURLOPT_URL, $this -> endpoint);
+                curl_setopt($this -> ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+                curl_setopt($this -> ch, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($this -> ch, CURLOPT_RETURNTRANSFER, true);
+                break;
         }
     }
 
-    public function post($data) {
-		$this -> curlOpts("POST", $data);
-        $response = curl_exec($this -> ch);
-        if($e = curl_error($this -> ch)) {
-            return $this -> formatReturnData($e, false);
+    protected function formatReturnData($data, $success) {
+        if($success) {
+            return Array(
+                "success" => true,
+                "data" => json_decode($data, true),
+            );
         } else {
-            return $this -> formatReturnData($response, true);
+            return Array(
+                "success" => false,
+                "errors" => $data,
+            );
         }
-    }
-
-	public function put($data) {
-		$this -> curlOpts("PUT", $data);
-        $response = curl_exec($this -> ch);
-        if($e = curl_error($this -> ch)) {
-            return $this -> formatReturnData($e, false);
-        } else {
-            return $this -> formatReturnData($response, true);
-        }
-	}
-
-    public function __destruct() {
-        curl_close($this -> ch);
     }
 
 }
