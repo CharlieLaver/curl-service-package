@@ -3,9 +3,7 @@
 namespace Clvr7\cURLService;
 
 ## TODO
-    # Changing / adding url params to endpoint in diff methods
-    # adding headers
-    # SOAP req opt
+    # SOAP REQ - https://stackoverflow.com/questions/7120586/soap-request-in-php-with-curl
 
 class cURLService extends cURLServiceBase {
 
