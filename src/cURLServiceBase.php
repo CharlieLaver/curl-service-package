@@ -46,11 +46,18 @@ class cURLServiceBase {
         }
     }
 
+    ## NEEDS TO BE TESTED !!
     protected function formatSoapXML($data) {
         $xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" 
         xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body>";
         
-        ## TO FIN ...
+        foreach($data as $param => $paramData) {
+            $xmlString .= "<m: " . $param . ">";
+                foreach($paramData as $pdKey => $pd) {
+                    $xmlString .= "<m: " . $pdKey . ">" . $pd . "</m: " . $pdKey . ">";
+                }
+            $xmlString .= "</m: " . $param . ">";
+        }
 
         $xmlString .= "</soap:Body></soap:Envelope>";
 
