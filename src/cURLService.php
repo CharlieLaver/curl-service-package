@@ -4,8 +4,8 @@ namespace Clvr7\cURLService;
 
 class cURLService extends cURLServiceBase {
 
-	public function __construct($endpoint) {
-        $this -> init($endpoint);
+	public function __construct($endpoint, $auth = false) {
+        $this -> init($endpoint, $auth);
     }
 
     public function addHeaders($headers) {
@@ -27,10 +27,10 @@ class cURLService extends cURLServiceBase {
         return $this -> return();
 	}
 
+    ## NEEDS TO BE TESTED !!
+    ## Find a test SOAP API
     public function soap($data) {
-        $xml_string = $this -> formatSoapXML($data);
-        return $xml_string;
-        
+        $xml_string = $this -> formatSoapXML($data);        
         $this -> addHeaders(Array(
             "Content-type: text/xml;charset=\"utf-8\"",
              "Accept: text/xml",

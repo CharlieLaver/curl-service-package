@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Clvr7\cURLService;
 
 class cURLServiceBase {
@@ -8,9 +7,12 @@ class cURLServiceBase {
     protected $endpoint = false;
     protected $ch = false;
 
-    protected function init($endpoint) {
+    protected function init($endpoint, $auth) {
         $this -> endpoint = $endpoint;
         $this -> ch = curl_init();
+        if($auth) {
+            curl_setopt($this -> ch, CURLOPT_USERPWD, "{$auth['username']}:{$auth['password']}");
+        }
     }
 
     protected function curlOpts($reqType, $data = false) {
@@ -46,7 +48,6 @@ class cURLServiceBase {
         }
     }
 
-    ## NEEDS TO BE TESTED !!
     protected function formatSoapXML($data) {
         $xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" 
         xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body>";
