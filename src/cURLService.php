@@ -12,6 +12,20 @@ class cURLService extends cURLServiceBase {
         curl_setopt($this -> ch, CURLOPT_HTTPHEADER, $headers);
     }
 
+    public function addURLParams($params) {
+        if(sizeof($params)) {
+            $this -> endpoint .= "?";
+            $index = 0;
+            foreach($params as $key => $value) {
+                $this -> endpoint .= $key ."=" . $value;
+                if($index != (sizeof($params) -1)) {
+                    $this -> endpoint .= "&";
+                }
+                $index++;
+            }
+        }
+    }
+
     public function get() {
 		$this -> curlOpts("GET");
         return $this -> return();
