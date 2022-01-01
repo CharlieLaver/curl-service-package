@@ -46,7 +46,7 @@ class cURLService extends cURLServiceBase {
     public function soap($data) {
         $xml_string = $this -> formatSoapXML($data);        
         $this -> addHeaders(Array(
-            "Content-type: text/xml;charset=\"utf-8\"",
+             "Content-type: text/xml;charset=\"utf-8\"",
              "Accept: text/xml",
              "Cache-Control: no-cache",
              "Pragma: no-cache",
