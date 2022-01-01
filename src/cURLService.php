@@ -41,8 +41,6 @@ class cURLService extends cURLServiceBase {
         return $this -> return();
 	}
 
-    ## NEEDS TO BE TESTED !!
-    ## Find a test SOAP API
     public function soap($data) {
         $xml_string = $this -> formatSoapXML($data);        
         $this -> addHeaders(Array(

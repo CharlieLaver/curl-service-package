@@ -5,7 +5,7 @@ A composer plugin that provides sinple helpers for calling both REST and SOAP AP
 When creating an instance of cURLService there are 2 paramaters.\
 1.) The API endpoint (URL) - required.\
 
-2.) A auth array that contains the API username and password is necessary - optional.\
+2.) A auth array that contains the API username and password if necessary - optional.\
 
 e.g. Creating an instance of cURLService with auth.\
 ~~~

@@ -70,12 +70,12 @@ class cURLServiceBase {
         if($e = curl_error($this -> ch)) {
             return Array(
                 "success" => false,
-                "data" => json_decode($e, true),
+                "errors" => json_decode($e, true),
             );
         } else {
             return Array(
                 "success" => true,
-                "errors" => json_decode($response, true),
+                "data" => json_decode($response, true),
             );
         }
     }
