@@ -9,7 +9,9 @@
 			"email": "charlielaver7@gmail.com"
 		}
 	],
-	"require": {},
+	"require": {
+		"php": ">=7.4"
+	},
 	"autoload": {
 		"psr-4": {
 			"Clvr7\\cURLService\\": "src/"
