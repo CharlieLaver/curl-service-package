@@ -1,9 +1,17 @@
 # curl-service-plugin
-A composer plugin that provides simple helpers for calling both SOAP &amp; REST API's in PHP.
 
-## TODO 
-* formatSoapXML()
-* API username & password opt
+A composer plugin that provides sinple helpers for calling both REST and SOAP APIs in PHP. The package utilizes PHP cURL in an object orientated approach.
 
-SOAP REQ - https://stackoverflow.com/questions/7120586/soap-request-in-php-with-curl
+When creating an instance of cURLService there are 2 paramaters.
+1.) The API endpoint (URL) - required.
+
+2.) A auth array that contains the API username and password is necessary - optional.
+
+e.g. Creating an instance of cURLService with auth.
+~~~
+$testAPI = new cURLService("https://testapi.com", Array(
+    "username" => "testUser",
+    "password" => "testPwd"
+));
+~~~
 
