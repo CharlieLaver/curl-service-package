@@ -4,8 +4,8 @@ namespace Clvr7\cURLService;
 
 class cURLService extends cURLServiceBase {
 
-	public function __construct($endpoint, $auth = false) {
-        $this -> init($endpoint, $auth);
+    public function __construct($endpoint, $auth = false) {
+    	$this -> init($endpoint, $auth);
     }
 
     public function addHeaders($headers) {
@@ -27,31 +27,31 @@ class cURLService extends cURLServiceBase {
     }
 
     public function get() {
-		$this -> curlOpts("GET");
+	$this -> curlOpts("GET");
         return $this -> return();
     }
 
     public function post($data) {
-		$this -> curlOpts("POST", $data);
+	$this -> curlOpts("POST", $data);
         return $this -> return();
     }
 
 	public function put($data) {
-		$this -> curlOpts("PUT", $data);
+	$this -> curlOpts("PUT", $data);
         return $this -> return();
 	}
 
     public function soap($data) {
-        $xml_string = $this -> formatSoapXML($data);        
+	$xmlString = $this -> formatSoapXML($data);
         $this -> addHeaders(Array(
              "Content-type: text/xml;charset=\"utf-8\"",
              "Accept: text/xml",
              "Cache-Control: no-cache",
              "Pragma: no-cache",
              "SOAPAction: " . $this -> endpoint, 
-             "Content-length: ". strlen($xml_string),
+             "Content-length: ". strlen($xmlString),
         ));
-        $this -> curlOpts("SOAP", $xml_string);
+        $this -> curlOpts("SOAP", $xmlString);
         return $this -> return();
     }
 

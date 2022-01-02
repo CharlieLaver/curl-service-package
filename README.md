@@ -2,6 +2,11 @@
 
 A composer plugin that provides sinple helpers for calling both REST and SOAP APIs in PHP. The package utilizes PHP cURL in an object orientated approach.\
 
+To install:
+~~~
+composer require clvr7/curl-service
+~~~
+
 When creating an instance of cURLService there are 2 paramaters.\
 1.) The API endpoint (URL) - required.\
 
@@ -55,4 +60,25 @@ $testAPI -> put(Array(
 ~~~
 
 ### SOAP REQ
-still in dev
+
+To MAKE A SOAP POST request you can call the soap() method in cURLService. This method expects an array of SOAP parameters which is then formatted into a xml string (formatSoapXML() in cURLServiceBase).\
+
+e.g.
+~~~
+$testAPI -> soap(
+  "paramKey1" => Array(
+     "key" => "value"			
+  ),
+);
+~~~
+This example will format a xml post string like so:
+~~~
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<m: paramKey1>
+			<m: key>value</m: key>
+		</m: paramKey1>
+	</soap:Body>
+</soap:Envelope>
+~~~
