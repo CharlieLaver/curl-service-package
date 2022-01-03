@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "clvr7"
+			"name": "clvr7",
+			"email": "clvr7dev@gmail.com"
 		}
 	],
 	"require": {
