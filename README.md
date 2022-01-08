@@ -1,6 +1,6 @@
 # curl-service-plugin
 
-A composer plugin that provides sinple helpers for calling both REST and SOAP APIs in PHP. The package utilizes PHP cURL in an object orientated approach.  
+A composer plugin that provides simple helpers for calling both REST and SOAP APIs in PHP. The package utilizes PHP cURL in an object orientated approach.  
 
 To install:  
 ~~~
