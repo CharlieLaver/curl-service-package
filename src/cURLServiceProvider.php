@@ -1,6 +1,6 @@
 <?php
 
-namespace Clvr7\cURLService;
+namespace Clvr7;
 
 use Illuminate\Support\ServiceProvider;
 
