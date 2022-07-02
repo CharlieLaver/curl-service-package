@@ -1,12 +1,12 @@
 {
-	"name": "clvr7/curl-service",
+	"name": "charlielaver/curl-service",
 	"description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "clvr7",
-			"email": "clvr7dev@gmail.com"
+			"name": "Charlie Laver",
+			"email": "charlielaver7@gmail.com"
 		}
 	],
 	"require": {
@@ -14,13 +14,13 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Clvr7\\cURLService\\": "src/"
+			"CharlieLaver\\curlService\\": "src/"
 		}
 	},
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Clvr7\\cURLService\\cURLServiceProvider"
+				"CharlieLaver\\curlService\\curlServiceProvider"
 			]
 		}
 	},

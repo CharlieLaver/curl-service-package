@@ -1,8 +1,8 @@
 <?php
 
-namespace Clvr7;
+namespace CharlieLaver;
 
-class cURLService extends cURLServiceBase {
+class curlService extends curlServiceBase {
 
     public function __construct($endpoint, $auth = false) {
     	$this -> init($endpoint, $auth);

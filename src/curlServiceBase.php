@@ -1,8 +1,8 @@
 <?php
 
-namespace Clvr7;
+namespace CharlieLaver;
 
-class cURLServiceBase {
+class curlServiceBase {
 
     protected $endpoint = false;
     protected $ch = false;
