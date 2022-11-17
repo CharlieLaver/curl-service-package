@@ -24,8 +24,8 @@ $testAPI = new curlService("https://testapi.com/api", Array(
 To add headers to a request you can call the addHeaders() method in curlService.  
 ~~~
 $testAPI -> addHeaders(Array(
-	'Content-type: application/xml',
-	'Authorization: test',
+	"Content-type: application/xml",
+	"Authorization: test",
 ));
 ~~~
 
