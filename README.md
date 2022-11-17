@@ -7,29 +7,30 @@ To install:
 composer require charlielaver/curl-service
 ~~~
 
-When creating an instance of cURLService there are 2 paramaters.  
+When creating an instance of curlService there are 2 paramaters.  
 1.) The API endpoint (URL) - required.  
 
 2.) A auth array that contains the API username and password if necessary - optional.  
 
-e.g. Creating an instance of cURLService with auth.  
+e.g. Creating an instance of curlService with auth.  
 ~~~
-$testAPI = new cURLService("https://testapi.com/api", Array(
+$testAPI = new curlService("https://testapi.com/api", Array(
     "username" => "testUser",
     "password" => "testPwd"
 ));
 ~~~
 
 ## Add Headers
-To add headers to a request you can call the addHeaders() method in cURLService.  
+To add headers to a request you can call the addHeaders() method in curlService.  
 ~~~
-$testAPI -> addHeaders(
-    "Content-type: text/xml;charset=  "utf-8  ""
-);
+$testAPI -> addHeaders(Array(
+	'Content-type: application/xml',
+	'Authorization: test',
+));
 ~~~
 
 ## Add URL parameters
-To add URL params to an endpoint, you can call the addURLParams() method in cURLService. This method expects an array of key value pairs that are added as URL parameters at the end of the endpoint.  
+To add URL params to an endpoint, you can call the addURLParams() method in curlService. This method expects an array of key value pairs that are added as URL parameters at the end of the endpoint.  
 ~~~
 $testAPI -> addURLParams(Array(
     "key1" => "value1",
@@ -61,7 +62,7 @@ $testAPI -> put(Array(
 
 ### SOAP REQ
 
-To MAKE A SOAP POST request you can call the soap() method in cURLService. This method expects an array of SOAP parameters which is then formatted into a xml string (formatSoapXML() in cURLServiceBase).  
+To MAKE A SOAP POST request you can call the soap() method in curlService. This method expects an array of SOAP parameters which is then formatted into a xml string (formatSoapXML() in cURLServiceBase).  
 
 e.g.
 ~~~
