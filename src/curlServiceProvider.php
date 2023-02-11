@@ -1,6 +1,6 @@
 <?php
 
-namespace mogg1;
+namespace clvr1;
 
 use Illuminate\Support\ServiceProvider;
 

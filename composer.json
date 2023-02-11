@@ -1,11 +1,11 @@
 {
-	"name": "mogg1/curl-service",
+	"name": "clvr1/curl-service",
 	"description": "A composer plugin that provides simple helpers for calling both SOAP & REST API's in PHP.",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Mogg1"
+			"name": "clvr1"
 		}
 	],
 	"require": {
@@ -13,13 +13,13 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"mog1\\curlService\\": "src/"
+			"clvr1\\curlService\\": "src/"
 		}
 	},
 	"extra": {
 		"laravel": {
 			"providers": [
-				"mogg1\\curlService\\curlServiceProvider"
+				"clvr1\\curlService\\curlServiceProvider"
 			]
 		}
 	},
