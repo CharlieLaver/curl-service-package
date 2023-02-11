@@ -4,7 +4,7 @@ A composer package that provides simple helpers for calling both REST and SOAP A
 
 To install:  
 ~~~
-composer require charlielaver/curl-service
+composer require mogg1/curl-service
 ~~~
 
 When creating an instance of curlService there are 2 paramaters.  

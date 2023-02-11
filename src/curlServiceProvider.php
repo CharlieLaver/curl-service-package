@@ -1,6 +1,6 @@
 <?php
 
-namespace CharlieLaver;
+namespace mogg1;
 
 use Illuminate\Support\ServiceProvider;
 

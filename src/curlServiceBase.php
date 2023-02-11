@@ -1,6 +1,6 @@
 <?php
 
-namespace CharlieLaver;
+namespace mogg1;
 
 class curlServiceBase {
 
